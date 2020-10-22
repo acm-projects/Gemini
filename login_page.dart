@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gemini_app/camera_page.dart';
 import 'main.dart';
+import 'FirstScreen.dart';
+import 'auth.dart';
 
 void main() => runApp(MaterialApp(
   home: LoginPage(),
@@ -11,6 +14,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String _email, _password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +88,11 @@ class _LoginPageState extends State<LoginPage> {
                                               child: RaisedButton(
                                                 color: Color(0xffB48C4A),
                                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-                                                onPressed: () {},
+                                                onPressed: () {
+                                                  Navigator.push(context,
+                                                      MaterialPageRoute(builder: (context)=>MyCam())
+                                                  );
+                                                },
                                                 child: Text(
                                                     'Login',
                                                     style: TextStyle(
@@ -111,7 +119,19 @@ class _LoginPageState extends State<LoginPage> {
                                               IconButton(
                                                 icon: Image.asset('assets/google.png', height: 100, width: 100),
                                                 iconSize: 80,
-                                                onPressed: () {},
+                                                onPressed: () {
+                                                  signInWithGoogle().then((result) {
+                                                    if (result != null) {
+                                                      Navigator.of(context).push(
+                                                        MaterialPageRoute(
+                                                          builder: (context) {
+                                                            return FirstScreen();
+                                                          },
+                                                        ),
+                                                      );
+                                                    }
+                                                  });
+                                                },
                                               ),
                                               IconButton(
                                                 icon: Image.asset('assets/facebook.png', height: 100, width: 100),

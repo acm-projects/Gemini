@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gemini_app/FirstScreen.dart';
 import 'main.dart';
+import 'auth.dart';
+import 'FirstScreen.dart';
 
 void main() => runApp(MaterialApp(
   home: RegisterPage(),
@@ -111,8 +114,20 @@ class _RegisterPageState extends State<RegisterPage> {
                         IconButton(
                             icon: Image.asset('assets/google.png', height: 100, width: 100),
                             iconSize: 80,
-                            onPressed: () {},
-                            ),
+                          onPressed: () {
+                            signInWithGoogle().then((result) {
+                              if (result != null) {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return FirstScreen();
+                                    },
+                                  ),
+                                );
+                              }
+                            });
+                          },
+                        ),
                         IconButton(
                           icon: Image.asset('assets/facebook.png', height: 100, width: 100),
                           iconSize: 80,
