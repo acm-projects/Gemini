@@ -24,11 +24,15 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffF4E4D6),
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color(0xffC99F92),
         title: Text(
           'Cart',
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(
+              fontSize: 25,
+              fontFamily: 'Oxygen',
+          ),
         ),
         centerTitle: true,
       ),
@@ -51,13 +55,21 @@ class CartItems extends StatelessWidget {
       height: 70,
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.black,
+          color: Color(0xffFFF9F3),
         ),
+        color: Color(0xffFFF9F3),
       ),
       child: Row(
         children: [
           FlatButton(
-            child: Text('Item Name'),
+            child: Text(
+                'Item Name',
+                style: TextStyle(
+                  fontFamily: 'Oxygen',
+                  fontSize: 17,
+                  color: Color(0xff5E314C),
+                )
+            ),
             onPressed: () {
               Navigator.pushNamed(context, '/ItemPage');
             },

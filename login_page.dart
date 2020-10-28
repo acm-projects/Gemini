@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gemini_app/camera_page.dart';
+import 'package:gemini_app/home.dart';
+import 'package:gemini_app/nav_bar.dart';
 import 'main.dart';
 import 'FirstScreen.dart';
 import 'auth.dart';
@@ -90,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                                                 onPressed: () {
                                                   Navigator.push(context,
-                                                      MaterialPageRoute(builder: (context)=>MyCam())
+                                                      MaterialPageRoute(builder: (context)=>NavigationBar())
                                                   );
                                                 },
                                                 child: Text(

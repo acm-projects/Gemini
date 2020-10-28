@@ -24,11 +24,15 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffF4E4D6),
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color(0xffC99F92),
         title: Text(
           'Settings',
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(
+              fontSize: 25,
+              fontFamily: 'Oxygen',
+          ),
         ),
         centerTitle: true,
       ),
@@ -62,13 +66,16 @@ class SettingButton extends StatelessWidget {
       margin: EdgeInsets.only(top: 15),
       child: RaisedButton(
         padding: EdgeInsets.only(top: 10),
-        color: Colors.purple[300],
+        color: Color(0xff5E314C),
         textColor: Colors.white,
         child: Align(
           alignment: Alignment.center,
           child: Text(
             category,
-            style: TextStyle(fontSize: 21),
+            style: TextStyle(
+                fontSize: 19,
+                fontFamily: 'Oxygen',
+            ),
           ),
         ),
         onPressed: () {
@@ -83,11 +90,15 @@ class SettingsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffF4E4D6),
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color(0xffC99F92),
         title: Text(
           'Specific Setting',
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(
+              fontSize: 25,
+              fontFamily: 'Oxygen',
+          ),
         ),
         centerTitle: true,
       ),

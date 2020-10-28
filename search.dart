@@ -114,10 +114,13 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color(0xffC99F92),
         title: Text(
           'Search Results',
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(
+              fontSize: 25,
+              fontFamily: 'Oxygen',
+          ),
         ),
         centerTitle: true,
       ),

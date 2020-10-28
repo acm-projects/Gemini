@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gemini_app/camera_page.dart';
 import 'register_page.dart';
 import 'login_page.dart';
+import 'home.dart';
 
 void main() => runApp(MaterialApp(
   home: Login(),
@@ -36,7 +37,7 @@ class Login extends StatelessWidget {
                   height: 50,
                   width: 250,
                   child: RaisedButton(
-                    color: Color(0xffB48C4A),
+                    color: Color(0xffC99F92),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                     onPressed: () {
                       Navigator.push(context,
@@ -59,7 +60,7 @@ class Login extends StatelessWidget {
                   height: 50,
                   width: 250,
                   child: RaisedButton(
-                    color: Color(0xffB48C4A),
+                    color: Color(0xffC99F92),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                     onPressed: () {
                       Navigator.push(context,

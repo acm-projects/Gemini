@@ -27,11 +27,11 @@ class _MyCamState extends State<MyCam> {
           'Take a picture of your outfit!',
           style: TextStyle(
             fontFamily: 'Oxygen',
-            color : Color(0xffF4E4D6),
+            color : Colors.white,
           )
       ),
       centerTitle: true,
-      backgroundColor: Color(0xff86466C),
+      backgroundColor: Color(0xffC99F93),
     ),
       body: new Center(child: _image == null ? new Text('No image selected'): new Image.file(_image),
       ),
@@ -40,7 +40,7 @@ class _MyCamState extends State<MyCam> {
         backgroundColor: Color(0xff86466C),
         child: new Icon(
             Icons.camera_alt,
-            color: Color(0xffF4E4D6),
+            color: Colors.white,
         ),
       ),
       ),

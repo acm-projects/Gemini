@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gemini_app/FirstScreen.dart';
-import 'main.dart';
 import 'auth.dart';
 import 'FirstScreen.dart';
 

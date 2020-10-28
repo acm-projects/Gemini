@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gemini_app/nav_bar.dart';
 import './settings.dart';
 import './search.dart';
 import './suggested.dart';
@@ -21,16 +22,22 @@ class MyApp extends StatelessWidget {
         '/SuggestedPage': (context) => SuggestedPage(),
         '/SearchPage': (context) => SearchPage(),
         '/SettingsButton': (context) => SettingsButton(),
+        '/Home' : (context) => HomeScreen(),
       },
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      //backgroundColor: Colors.black,
+      backgroundColor: Color(0xffF4E4D6),
       appBar: AppBar(
         centerTitle: true,
         leading: Settings(),
@@ -40,18 +47,31 @@ class HomeScreen extends StatelessWidget {
         ],
         title: Text(
           'Home',
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(
+            fontSize: 25,
+            fontFamily: 'Oxygen',
+            color: Colors.white,
+          ),
         ),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color(0xffC99F92),
       ),
       drawer: Drawer(),
       body: Column(
         children: [
-          Suggested('Recommended'),
-          Suggested('Popular'),
-          Suggested('Recently Viewed'),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Suggested>[
+                  Suggested('Recommended'),
+                  Suggested('Popular'),
+                  Suggested('Recently Viewed'),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+

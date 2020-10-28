@@ -21,14 +21,19 @@ class Suggested extends StatelessWidget {
               alignment: Alignment.topCenter,
               child: Container(
                 child: RaisedButton(
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   padding: EdgeInsets.only(top: 10),
-                  color: Colors.purple[300],
+                  color: Color(0xff5E314C),
                   textColor: Colors.white,
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Text(
                       category,
-                      style: TextStyle(fontSize: 17),
+                      style: TextStyle(
+                          fontSize: 17,
+                          color: Colors.white,
+                          fontFamily: 'Oxygen',
+                      ),
                     ),
                   ),
                   onPressed: () {
@@ -59,11 +64,15 @@ class SuggestedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffF4E4D6),
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color(0xffC99F92),
         title: Text(
           'Suggested',
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(
+              fontSize: 25,
+              fontFamily: 'Oxygen',
+          ),
         ),
         centerTitle: true,
       ),
