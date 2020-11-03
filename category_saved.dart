@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import './home.dart';
 import './suggested.dart';
+import 'item.dart';
 
 class Category extends StatelessWidget {
   Category();
-
-  void detail() {
-    print('open category page');
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +23,11 @@ class Category extends StatelessWidget {
             height: 100,
             width: 100,
             child: RaisedButton(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50)),
               color: Color(0xffF4E4D6),
               onPressed: () {
-                Navigator.pushNamed(context, '/ItemPage');
+                Navigator.push(context, new MaterialPageRoute(builder: (context) => CategoryPage()) );
               },
             ),
           ),
@@ -49,3 +47,73 @@ class Category extends StatelessWidget {
     );
   }
 }
+
+  class CategoryPage extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+      backgroundColor: Color(0xffF4E4D6),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              icon: Icon(Icons.more_horiz),
+              onPressed: (){}
+          ),
+        ],
+      backgroundColor: Color(0xffC99F92),
+      title: Text(
+      'Category',
+      style: TextStyle(
+      fontSize: 25,
+      fontFamily: 'Oxygen',
+       ),
+      ),
+      centerTitle: true,
+      ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 18.0),
+            child: Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Item(),
+                        Item(),
+                        Item(),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Item(),
+                        Item(),
+                        Item(),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Item(),
+                        Item(),
+                        Item(),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Item(),
+                        Item(),
+                        Item(),
+                      ],
+                    ),
+                  ],
+                )
+              ),
+          ),
+        ),
+    );
+    }
+  }

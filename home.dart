@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gemini_app/category_saved.dart';
 import 'package:gemini_app/nav_bar.dart';
 import './settings.dart';
 import './search.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/SearchPage': (context) => SearchPage(),
         '/SettingsButton': (context) => SettingsButton(),
         '/Home' : (context) => HomeScreen(),
+        '/CategoryPage': (context) => CategoryPage(),
       },
     );
   }
@@ -60,15 +62,15 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Expanded(
             child: SingleChildScrollView(
-              child: Column(
-                children: <Suggested>[
-                  Suggested('Recommended'),
-                  Suggested('Popular'),
-                  Suggested('Recently Viewed'),
-                ],
+                child: Column(
+                  children: <Suggested>[
+                    Suggested('Recommended'),
+                    Suggested('Popular'),
+                    Suggested('Recently Viewed'),
+                  ],
+                ),
               ),
             ),
-          ),
         ],
       ),
     );

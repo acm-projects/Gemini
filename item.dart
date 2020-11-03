@@ -19,12 +19,12 @@ class Item extends StatelessWidget {
         ),
       ),
       height: 125.0,
-      width: 107,
+      width: 118,
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         color: Color(0xffF4E4D6),
         onPressed: () {
-          Navigator.pushNamed(context, '/ItemPage');
+          Navigator.push(context, new MaterialPageRoute(builder: (context) => ItemPage()) );
         },
       ),
     );
@@ -47,6 +47,68 @@ class ItemPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
+      body: Container(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 30),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 200.0, bottom: 5),
+                    child: Text(
+                        'name',
+                      style: TextStyle(
+                        fontFamily: 'Oxygen',
+                        fontSize: 30,
+                      )
+                    ),
+                  ),
+                  Text(
+                      'price',
+                      style: TextStyle(
+                        fontFamily: 'Oxygen',
+                        fontSize: 20,
+                      )
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 300,
+                    width: 350,
+                    child: Container(
+                      color: Colors.white,
+                    )
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 13, left: 30),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                          Text(
+                            'Description',
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontFamily: 'Oxygen',
+                            )
+                          ),
+                      ],
+                    )
+                  )
+                ],
+              )
+            ],
+          ),
+        )
+      )
     );
   }
 }
