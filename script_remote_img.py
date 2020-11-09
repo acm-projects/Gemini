@@ -10,7 +10,7 @@ client = vision_v1.ImageAnnotatorClient()
 #### REMOTE IMAGE #####
 
 image = vision_v1.Image()
-image.source.image_uri = 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTeRVXrYleuL7a8evAgr4GxINTMDessxShQalI60-bd7WjkOg73xyvzKityOknTmCT3CLatPkU-hvbDsxIVtP9wRJdVymNQwUiU6Det3eo6dXZmz31DuwPvcNg&usqp=CAE'
+image.source.image_uri = 'https://n.nordstrommedia.com/id/sr3/33bc5277-2935-4c23-8d11-560ff131fd02.jpeg?crop=pad&pad_color=FFF&format=jpeg&trim=color&trimcolor=FFF&w=780&h=838'
 
 #### LABEL DETECTION ####
 
@@ -93,4 +93,25 @@ def detect_web_uri(uri):
             'https://cloud.google.com/apis/design/errors'.format(
                 response.error.message))
 
-detect_web_uri(image.source.image_uri)
+#detect_web_uri(image.source.image_uri)
+
+def return_img_urls(uri):
+    from google.cloud import vision
+    client = vision.ImageAnnotatorClient()
+    image = vision.Image()
+    image.source.image_uri = uri
+
+    response = client.web_detection(image=image)
+    annotations = response.web_detection
+
+    if annotations.visually_similar_images:
+        for image in annotations.visually_similar_images:
+            return image.url
+
+    if response.error.message:
+        raise Exception(
+            '{}\nFor more info on error messages, check: '
+            'https://cloud.google.com/apis/design/errors'.format(
+                response.error.message))
+
+print(return_img_urls(image.source.image_uri))
