@@ -1,3 +1,5 @@
+<img src="Gemini%20Logo%20Final.png" width="400">
+
 # Gemini
 > Mythology of the constellation Gemini. This zodiacal constellation represents the twins Castor and Polydeuces.
 ## Project Description
